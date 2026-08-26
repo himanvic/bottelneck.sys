@@ -57,12 +57,12 @@
         class="text-5xl md:text-7xl font-semibold text-white tracking-tighter mb-6 leading-tight max-w-4xl"
       >
         Don't waste your parents' money.<br />
-        <span class="text-zinc-500">Buy the exact PC you need.</span>
+        <span class="text-zinc-500">Buy the exact laptop you need.</span>
       </h1>
       <p class="text-lg md:text-xl text-zinc-400 max-w-3xl font-light mb-10">
-        Are you overspending on a gaming rig when you only need C++? Or buying
-        an underpowered laptop for Machine Learning? Our engine checks hardware
-        synergy and evaluates it against your actual B.Tech syllabus.
+        Are you overspending on a heavy gaming rig when you only need C++? Or
+        buying an underpowered laptop for Machine Learning? Our engine evaluates
+        hardware against your actual B.Tech syllabus.
       </p>
       <a
         href="#demo"
@@ -77,259 +77,258 @@
       <div
         class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-12 shadow-2xl"
       >
-        <h2 class="text-2xl text-white font-medium mb-2">
-          Student System Check
-        </h2>
-        <p class="text-zinc-400 text-sm mb-8">
-          Select your target hardware and your college workload to get an honest
-          assessment.
-        </p>
-
-        <!-- Hardware Selection Row -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <!-- Processor -->
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-              >Processor (CPU)</label
+        <!-- Mode Selection Cards (Home) -->
+        <div id="homeMode" class="mb-8">
+          <h2 class="text-2xl text-white font-medium mb-2">
+            Student System Check
+          </h2>
+          <p class="text-zinc-400 text-sm mb-6">
+            Choose how you want to evaluate your system configuration.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              onclick="switchMode('auto')"
+              class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition"
             >
-            <select
-              id="cpu"
-              class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none duration-300"
+              <h3 class="text-white font-medium mb-1">✨ Auto-Suggest Mode</h3>
+              <p class="text-zinc-400 text-xs">
+                Don't know specs? Select your branch & workload. We'll find the
+                exact laptop specs you need.
+              </p>
+            </div>
+            <div
+              onclick="switchMode('manual')"
+              class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition"
             >
-              <optgroup label="Intel 14th/13th Gen">
-                <option data-tier="high" value="i9">
-                  Intel Core i9-14900K / 13900K
-                </option>
-                <option data-tier="high" value="i7">
-                  Intel Core i7-14700K / 13700K
-                </option>
-                <option data-tier="mid" value="i5">
-                  Intel Core i5-14600K / 13400F
-                </option>
-                <option data-tier="low" value="i3">
-                  Intel Core i3-14100F / 12100F
-                </option>
-              </optgroup>
-              <optgroup label="AMD Ryzen Series">
-                <option data-tier="high" value="r9">
-                  AMD Ryzen 9 9950X / 7950X
-                </option>
-                <option data-tier="high" value="r7">
-                  AMD Ryzen 7 7800X3D / 7700X
-                </option>
-                <option data-tier="mid" value="r5">
-                  AMD Ryzen 5 7600X / 9600X
-                </option>
-                <option data-tier="low" value="r5-low">
-                  AMD Ryzen 5 5600 / 7500F
-                </option>
-              </optgroup>
-            </select>
-          </div>
-          <!-- Graphics -->
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-              >Graphics (GPU)</label
-            >
-            <select
-              id="gpu"
-              class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none duration-300"
-            >
-              <optgroup label="NVIDIA RTX 40 & 30 Series">
-                <option data-tier="high" data-brand="nvidia" value="4090">
-                  NVIDIA RTX 4090 / 4080
-                </option>
-                <option data-tier="high" data-brand="nvidia" value="4070">
-                  NVIDIA RTX 4070 Ti / 3080
-                </option>
-                <option data-tier="mid" data-brand="nvidia" value="4060">
-                  NVIDIA RTX 4060 Ti / 3060 Ti
-                </option>
-                <option data-tier="low" data-brand="nvidia" value="3050">
-                  NVIDIA RTX 3050 / 2050 (Laptop)
-                </option>
-              </optgroup>
-              <optgroup label="AMD Radeon RX Series">
-                <option data-tier="high" data-brand="amd" value="7900">
-                  AMD RX 7900 XTX / XT
-                </option>
-                <option data-tier="mid" data-brand="amd" value="7700">
-                  AMD RX 7800 XT / 7700 XT
-                </option>
-                <option data-tier="low" data-brand="amd" value="7600">
-                  AMD RX 7600 / 6600
-                </option>
-              </optgroup>
-            </select>
-          </div>
-          <!-- Resolution -->
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-              >Target Display</label
-            >
-            <select
-              id="res"
-              class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none duration-300"
-            >
-              <option value="1080">1080p (Standard Laptop / Monitor)</option>
-              <option value="1440">1440p (QHD / Premium Laptop)</option>
-              <option value="2160">4K (External Monitor)</option>
-            </select>
+              <h3 class="text-white font-medium mb-1">⚙️ Manual Spec Check</h3>
+              <p class="text-zinc-400 text-xs">
+                Already have a laptop configuration in mind? Test its H/U
+                series, GPU, and RAM.
+              </p>
+            </div>
           </div>
         </div>
 
-        <hr class="border-zinc-800 my-6" />
-
-        <!-- Student Profile Row -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <!-- Branch -->
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-              >B.Tech Branch</label
+        <!-- Interactive App Workspace (Hidden until mode is picked) -->
+        <div id="workspace" class="hidden">
+          <div class="flex justify-between items-center mb-6">
+            <h3 id="workspaceTitle" class="text-xl text-white font-medium">
+              Evaluation Engine
+            </h3>
+            <button
+              onclick="switchMode('home')"
+              class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-3 py-1.5 rounded-lg transition"
             >
-            <select
-              id="branch"
-              class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-            >
-              <option value="cse">
-                Computer Science / IT (CSE, ISE, AIML)
-              </option>
-              <option value="ece">Electronics / Electrical (ECE, EEE)</option>
-              <option value="mech">Mechanical / Civil / Aero</option>
-              <option value="design">Design / Animation / Gaming</option>
-            </select>
+              ← Back to Modes
+            </button>
           </div>
-          <!-- Workload -->
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-              >Primary Software Need</label
-            >
-            <select
-              id="workload"
-              class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-            >
-              <option value="basic">
-                Basic Coding (C++, Python, Java, VS Code)
-              </option>
-              <option value="ml">
-                AI & Machine Learning (TensorFlow, PyTorch, CUDA)
-              </option>
-              <option value="app">
-                Heavy Dev (Android Studio, Docker, Virtual Machines)
-              </option>
-              <option value="cad">
-                CAD & Simulation (AutoCAD, SolidWorks, MATLAB)
-              </option>
-              <option value="creative">
-                Creative (Blender, Premiere Pro, Unreal Engine)
-              </option>
-            </select>
-          </div>
-        </div>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-col md:flex-row gap-4 mb-6">
-          <button
-            onclick="autoSuggest()"
-            class="w-full md:w-1/3 bg-zinc-800 hover:bg-zinc-700 text-white py-4 rounded-lg font-medium transition border border-zinc-700"
+          <!-- Auto-Suggest Inputs -->
+          <div
+            id="autoInputs"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
           >
-            ✨ Auto-Pick Specs for Me
-          </button>
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
+                >B.Tech Branch</label
+              >
+              <select
+                id="branch"
+                class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
+              >
+                <option value="cse">
+                  Computer Science / IT (CSE, ISE, AIML)
+                </option>
+                <option value="ece">Electronics / Electrical (ECE, EEE)</option>
+                <option value="mech">Mechanical / Civil / Aero</option>
+                <option value="design">Design / Animation / Gaming</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
+                >Primary Software Need</label
+              >
+              <select
+                id="workload"
+                class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
+              >
+                <option value="basic">
+                  Basic Coding (C++, Python, Java, VS Code)
+                </option>
+                <option value="ml">
+                  AI & Machine Learning (TensorFlow, PyTorch, CUDA)
+                </option>
+                <option value="app">
+                  Heavy Dev (Android Studio, Docker, Virtual Machines)
+                </option>
+                <option value="cad">
+                  CAD & Simulation (AutoCAD, SolidWorks, MATLAB)
+                </option>
+                <option value="creative">
+                  Creative (Blender, Premiere Pro, Unreal Engine)
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Manual Inputs -->
+          <div
+            id="manualInputs"
+            class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
+          >
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
+                >Processor (CPU)</label
+              >
+              <select
+                id="cpu"
+                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
+              >
+                <option value="high">
+                  Intel Core i7-13620H / 14700HX (High Performance)
+                </option>
+                <option value="mid">
+                  Intel Core i5-13420H / 12450H (Mid Gaming/Dev)
+                </option>
+                <option value="useries">
+                  Intel Core i5-1335U / 1235U (Thin & Light / Battery)
+                </option>
+                <option value="ryzen7">
+                  AMD Ryzen 7 7840HS / 8845HS (High Performance)
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
+                >Graphics (GPU)</label
+              >
+              <select
+                id="gpu"
+                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
+              >
+                <option value="high">
+                  NVIDIA RTX 4060 / 4070 Laptop (Heavy Gaming / AI)
+                </option>
+                <option value="mid">
+                  NVIDIA RTX 4050 Laptop (Balanced Mid-Range)
+                </option>
+                <option value="entry">
+                  NVIDIA RTX 3050 Laptop (Entry Gaming / Basic CUDA)
+                </option>
+                <option value="integrated">
+                  Intel Iris Xe / Integrated Graphics (No Dedicated GPU)
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
+                >RAM Memory</label
+              >
+              <select
+                id="ram"
+                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
+              >
+                <option value="8">
+                  8 GB RAM (Basic Office & Light Coding)
+                </option>
+                <option value="16">
+                  16 GB RAM (Standard B.Tech / Recommended)
+                </option>
+                <option value="32">
+                  32 GB RAM (Heavy Dev, Docker & AI Multitasking)
+                </option>
+              </select>
+            </div>
+          </div>
+
           <button
             onclick="runAnalysis()"
-            class="w-full md:w-2/3 bg-indigo-600 hover:bg-indigo-500 text-white py-4 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20"
+            class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-4 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20"
           >
-            Analyze Build & Syllabus Match
+            Analyze Configuration
           </button>
-        </div>
 
-        <!-- Results Box (Hidden by default) -->
-        <div
-          id="resultsBox"
-          class="hidden border-t border-zinc-800 pt-8 mt-2 transition-all flex flex-col gap-4"
-        >
-          <!-- Hardware Synergy -->
-          <div class="bg-zinc-950 rounded-xl p-5 border border-zinc-800">
-            <div class="flex items-center justify-between mb-3">
-              <h3
-                class="text-md text-white font-medium flex items-center gap-2"
+          <!-- Results Box -->
+          <div
+            id="resultsBox"
+            class="hidden border-t border-zinc-800 pt-6 mt-6 flex flex-col gap-4"
+          >
+            <div class="bg-zinc-950 rounded-xl p-5 border border-zinc-800">
+              <h4
+                id="resultHeader"
+                class="text-green-400 font-bold text-base mb-4"
               >
-                ⚙️ Hardware Synergy
-              </h3>
-              <span
-                id="hardwareBadge"
-                class="px-3 py-1 rounded-full text-xs font-semibold"
-              ></span>
-            </div>
-            <p
-              id="hardwareText"
-              class="text-sm text-zinc-400 leading-relaxed"
-            ></p>
-          </div>
+                Analysis Results
+              </h4>
 
-          <!-- B.Tech Suitability -->
-          <div class="bg-zinc-950 rounded-xl p-5 border border-zinc-800">
-            <div class="flex items-center justify-between mb-3">
-              <h3
-                class="text-md text-white font-medium flex items-center gap-2"
-              >
-                🎓 Coursework & Career Match
-              </h3>
-              <span
-                id="courseBadge"
-                class="px-3 py-1 rounded-full text-xs font-semibold"
-              ></span>
+              <!-- Manual Scorecards (Visible only in manual mode) -->
+              <div id="scorecards" class="hidden grid grid-cols-3 gap-3 mb-4">
+                <div
+                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
+                >
+                  <span class="text-[10px] text-zinc-400 block">CPU Power</span>
+                  <span id="scoreCpu" class="text-white font-bold text-xs"
+                    >0/10</span
+                  >
+                </div>
+                <div
+                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
+                >
+                  <span class="text-[10px] text-zinc-400 block">GPU Power</span>
+                  <span id="scoreGpu" class="text-white font-bold text-xs"
+                    >0/10</span
+                  >
+                </div>
+                <div
+                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
+                >
+                  <span class="text-[10px] text-zinc-400 block"
+                    >Efficiency</span
+                  >
+                  <span id="scoreBattery" class="text-white font-bold text-xs"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- Pointwise Specs Breakdown -->
+              <div class="flex flex-col gap-2">
+                <div
+                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
+                >
+                  <span id="p1Icon" class="text-xl">💻</span>
+                  <span
+                    id="p1Text"
+                    class="text-xs text-zinc-400 leading-relaxed"
+                  ></span>
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
+                >
+                  <span id="p2Icon" class="text-xl">⚙️</span>
+                  <span
+                    id="p2Text"
+                    class="text-xs text-zinc-400 leading-relaxed"
+                  ></span>
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
+                >
+                  <span id="p3Icon" class="text-xl">🧠</span>
+                  <span
+                    id="p3Text"
+                    class="text-xs text-zinc-400 leading-relaxed"
+                  ></span>
+                </div>
+              </div>
             </div>
-            <p
-              id="courseText"
-              class="text-sm text-zinc-400 leading-relaxed"
-            ></p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Info Grid -->
-    <section
-      class="py-20 px-6 max-w-6xl mx-auto border-t border-zinc-900 grid grid-cols-1 md:grid-cols-2 gap-12"
-    >
-      <div>
-        <h3 class="text-2xl text-white font-medium mb-4">
-          The Great Indian Laptop Trap
-        </h3>
-        <p class="text-zinc-400 font-light leading-relaxed">
-          Every year, lakhs of engineering freshers buy ₹1,00,000+ gaming
-          laptops just to write simple C++ and Python code, completely wasting
-          their budget. On the flip side, AIML students buy laptops with AMD
-          GPUs only to realize they desperately need NVIDIA's CUDA cores for
-          deep learning frameworks. We fix this information gap.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-2xl text-white font-medium mb-4">Engine Metrics</h3>
-        <p class="text-zinc-400 font-light leading-relaxed mb-4">
-          This tool doesn't just check hardware—it cross-references your
-          hardware against syllabus requirements:
-        </p>
-        <ul class="space-y-2 text-sm text-zinc-500">
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-            <strong>CUDA checks</strong> for AI/ML students
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-            <strong>Overkill warnings</strong> for basic web/app developers
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-            <strong>Single-core CPU checks</strong> for Mechanical CAD users
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -345,196 +344,144 @@
       </p>
     </footer>
 
-    <!-- Interactive Logic -->
+    <!-- Interactive Script Logic -->
     <script>
-      function autoSuggest() {
-        const cpuSelect = document.getElementById("cpu");
-        const gpuSelect = document.getElementById("gpu");
-        const resSelect = document.getElementById("res");
-        const workload = document.getElementById("workload").value;
+      let currentMode = "auto";
 
-        // 1. Auto-select the specs based on the category
-        if (workload === "basic") {
-          // Basic Coding: Mid-tier CPU, Low-tier GPU
-          cpuSelect.value = "i5";
-          gpuSelect.value = "3050";
-          resSelect.value = "1080";
-        } else if (workload === "ml") {
-          // AI & ML: High-tier CPU, High-tier NVIDIA GPU (CUDA is mandatory)
-          cpuSelect.value = "i7";
-          gpuSelect.value = "4070";
-          resSelect.value = "1440";
-        } else if (workload === "app") {
-          // Heavy Dev: High-tier CPU (for emulators/Docker), Mid-tier GPU
-          cpuSelect.value = "r7"; // Ryzen 7
-          gpuSelect.value = "4060";
-          resSelect.value = "1440";
-        } else if (workload === "cad") {
-          // CAD: Good single-core CPU, Decent GPU for 3D viewport
-          cpuSelect.value = "i5";
-          gpuSelect.value = "4060";
-          resSelect.value = "1080";
-        } else if (workload === "creative") {
-          // Creative: High-tier CPU, High-tier GPU for rendering
-          cpuSelect.value = "i9";
-          gpuSelect.value = "4070";
-          resSelect.value = "2160";
+      function switchMode(mode) {
+        currentMode = mode;
+        const home = document.getElementById("homeMode");
+        const workspace = document.getElementById("workspace");
+        const autoInputs = document.getElementById("autoInputs");
+        const manualInputs = document.getElementById("manualInputs");
+        const title = document.getElementById("workspaceTitle");
+
+        home.classList.add("hidden");
+        workspace.classList.remove("hidden");
+        document.getElementById("resultsBox").classList.add("hidden");
+
+        if (mode === "auto") {
+          autoInputs.classList.remove("hidden");
+          manualInputs.classList.add("hidden");
+          title.innerText = "🎯 Smart Course Advisor (Auto-Suggest)";
+        } else {
+          autoInputs.classList.add("hidden");
+          manualInputs.classList.remove("hidden");
+          title.innerText = "⚙️ Manual Laptop Hardware Check";
         }
-
-        // 2. Add a quick highlight effect so the user sees the dropdowns change
-        cpuSelect.classList.add("ring-2", "ring-indigo-500");
-        gpuSelect.classList.add("ring-2", "ring-indigo-500");
-        resSelect.classList.add("ring-2", "ring-indigo-500");
-
-        setTimeout(() => {
-          cpuSelect.classList.remove("ring-2", "ring-indigo-500");
-          gpuSelect.classList.remove("ring-2", "ring-indigo-500");
-          resSelect.classList.remove("ring-2", "ring-indigo-500");
-        }, 600);
-
-        // 3. Automatically run the analysis with the new specs
-        runAnalysis();
       }
 
       function runAnalysis() {
-        const cpuSelect = document.getElementById("cpu");
-        const gpuSelect = document.getElementById("gpu");
-        const res = document.getElementById("res").value;
-        const workload = document.getElementById("workload").value;
-        const branchSelect = document.getElementById("branch");
-
-        // Get data-tier attributes
-        const cpuTier =
-          cpuSelect.options[cpuSelect.selectedIndex].getAttribute("data-tier");
-        const gpuTier =
-          gpuSelect.options[gpuSelect.selectedIndex].getAttribute("data-tier");
-        const gpuBrand =
-          gpuSelect.options[gpuSelect.selectedIndex].getAttribute("data-brand");
-
-        // Get text names
-        const cpuName =
-          cpuSelect.options[cpuSelect.selectedIndex].text.split(" / ")[0];
-        const gpuName =
-          gpuSelect.options[gpuSelect.selectedIndex].text.split(" / ")[0];
-        const branchName =
-          branchSelect.options[branchSelect.selectedIndex].text;
-
-        // UI Elements
         const box = document.getElementById("resultsBox");
-        const hardwareText = document.getElementById("hardwareText");
-        const hardwareBadge = document.getElementById("hardwareBadge");
-        const courseText = document.getElementById("courseText");
-        const courseBadge = document.getElementById("courseBadge");
+        const scorecards = document.getElementById("scorecards");
+        const header = document.getElementById("resultHeader");
 
         box.classList.remove("hidden");
 
-        // -------------------------------------------
-        // 1. HARDWARE SYNERGY LOGIC
-        // -------------------------------------------
-        if (cpuTier === "low" && gpuTier === "high") {
-          hardwareBadge.className =
-            "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-          hardwareBadge.innerText = "Severe CPU Bottleneck";
-          hardwareText.innerHTML = `Your <strong>${cpuName}</strong> is too weak for the <strong>${gpuName}</strong>. The GPU will be starved of data, resulting in a massive performance loss. Buy a cheaper GPU and a better processor.`;
-        } else if (cpuTier === "high" && gpuTier === "low") {
-          hardwareBadge.className =
-            "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-          hardwareBadge.innerText = "Severe GPU Bottleneck";
-          hardwareText.innerHTML = `Your <strong>${cpuName}</strong> is overkill for the <strong>${gpuName}</strong>. You are wasting heavy processor power because your graphics card can't keep up.`;
-        } else if (cpuTier === gpuTier) {
-          hardwareBadge.className =
-            "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-          hardwareBadge.innerText = "Perfectly Balanced";
-          hardwareText.innerHTML = `Excellent hardware pairing! The <strong>${cpuName}</strong> and <strong>${gpuName}</strong> are perfectly matched for ${res}p. Neither component will hold the other back.`;
+        if (currentMode === "auto") {
+          scorecards.classList.add("hidden");
+          const workload = document.getElementById("workload").value;
+
+          if (workload === "basic") {
+            header.innerText = "✨ Ideal Configuration for Basic Coding";
+            document.getElementById("p1Icon").innerText = "💻";
+            document.getElementById("p1Text").innerHTML =
+              "<strong>Target CPU:</strong> Intel i5-1335U, i5-1235U, or AMD Ryzen 5 7520U (U-series for high battery backup during long college lectures).";
+            document.getElementById("p2Icon").innerText = "⚙️";
+            document.getElementById("p2Text").innerHTML =
+              "<strong>Target GPU:</strong> Intel Iris Xe / Radeon Integrated Graphics (No dedicated GPU required; saves money).";
+            document.getElementById("p3Icon").innerText = "🧠";
+            document.getElementById("p3Text").innerHTML =
+              "<strong>Target RAM:</strong> 16 GB RAM (Essential for smooth multi-tab research alongside VS Code).";
+          } else if (workload === "ml") {
+            header.innerText =
+              "🚀 Ideal Configuration for AI & Machine Learning";
+            document.getElementById("p1Icon").innerText = "💻";
+            document.getElementById("p1Text").innerHTML =
+              "<strong>Target CPU:</strong> Intel i7-13620H, i7-14700HX, or Ryzen 7 7840HS (H-series power for dataset processing).";
+            document.getElementById("p2Icon").innerText = "⚡";
+            document.getElementById("p2Text").innerHTML =
+              "<strong>Target GPU:</strong> NVIDIA RTX 4060 or RTX 4070 Laptop (Mandatory for PyTorch/TensorFlow CUDA core acceleration).";
+            document.getElementById("p3Icon").innerText = "🧠";
+            document.getElementById("p3Text").innerHTML =
+              "<strong>Target RAM:</strong> 32 GB RAM (Crucial to prevent out-of-memory errors when training models locally).";
+          } else if (workload === "app") {
+            header.innerText =
+              "📱 Ideal Configuration for Heavy App Dev & Docker";
+            document.getElementById("p1Icon").innerText = "💻";
+            document.getElementById("p1Text").innerHTML =
+              "<strong>Target CPU:</strong> AMD Ryzen 7 7840HS or Intel i5-13420H (High multi-core thread count).";
+            document.getElementById("p2Icon").innerText = "⚙️";
+            document.getElementById("p2Text").innerHTML =
+              "<strong>Target GPU:</strong> NVIDIA RTX 4050 Laptop (Balanced mid-range for rendering).";
+            document.getElementById("p3Icon").innerText = "🧠";
+            document.getElementById("p3Text").innerHTML =
+              "<strong>Target RAM:</strong> 32 GB RAM (Required to run Android Studio emulators and Docker containers concurrently).";
+          } else if (workload === "cad") {
+            header.innerText =
+              "📐 Ideal Configuration for Engineering CAD & Simulation";
+            document.getElementById("p1Icon").innerText = "💻";
+            document.getElementById("p1Text").innerHTML =
+              "<strong>Target CPU:</strong> Intel Core i7-13620H or Ryzen 5 7535HS (High single-core clock speeds for SolidWorks).";
+            document.getElementById("p2Icon").innerText = "⚙️";
+            document.getElementById("p2Text").innerHTML =
+              "<strong>Target GPU:</strong> NVIDIA RTX 4050 or RTX 3050 Laptop (Smooth 3D viewport rendering).";
+            document.getElementById("p3Icon").innerText = "🧠";
+            document.getElementById("p3Text").innerHTML =
+              "<strong>Target RAM:</strong> 16 GB RAM (Standard recommendation for handling complex assembly models).";
+          } else {
+            header.innerText =
+              "🎨 Ideal Configuration for Creative & Rendering";
+            document.getElementById("p1Icon").innerText = "💻";
+            document.getElementById("p1Text").innerHTML =
+              "<strong>Target CPU:</strong> Intel Core i7-14700HX or Ryzen 7 8845HS (Maximum computing horsepower).";
+            document.getElementById("p2Icon").innerText = "⚡";
+            document.getElementById("p2Text").innerHTML =
+              "<strong>Target GPU:</strong> NVIDIA RTX 4060 Laptop (High VRAM for Blender and Premiere Pro timeline exports).";
+            document.getElementById("p3Icon").innerText = "🧠";
+            document.getElementById("p3Text").innerHTML =
+              "<strong>Target RAM:</strong> 32 GB RAM (Prevents system freezing during heavy media rendering exports).";
+          }
         } else {
-          hardwareBadge.className =
-            "px-3 py-1 rounded-full text-xs font-semibold bg-yellow-900/50 text-yellow-400";
-          hardwareBadge.innerText = "Slight Imbalance";
-          hardwareText.innerHTML = `There is a minor bottleneck between the <strong>${cpuName}</strong> and <strong>${gpuName}</strong>, but it's totally acceptable. This is a safe build.`;
-        }
+          scorecards.classList.remove("hidden");
+          header.innerText = "📊 Manual Build Performance Analysis";
 
-        // -------------------------------------------
-        // 2. B.TECH COURSEWORK LOGIC
-        // -------------------------------------------
+          const cpu = document.getElementById("cpu").value;
+          const gpu = document.getElementById("gpu").value;
+          const ram = document.getElementById("ram").value;
 
-        // Case A: Basic Coding
-        if (workload === "basic") {
-          if (gpuTier === "high" || cpuTier === "high") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-            courseBadge.innerText = "Massive Overkill (Waste of Money)";
-            courseText.innerHTML = `As a ${branchName} student, if you only plan to code in C++, Python, and do basic web dev, <strong>you do NOT need a ${gpuName} or a ${cpuName}.</strong> This is a massive waste of Rupees. A basic i5/Ryzen 5 with integrated graphics or an RTX 3050 is more than enough. Save your money or spend it on a better screen/battery life.`;
-          } else {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-            courseBadge.innerText = "Smart Choice";
-            courseText.innerHTML = `Perfect. C++, Python, Java, and Data Structures run easily on this setup. You are saving money by not buying an unnecessary high-end gaming GPU.`;
-          }
-        }
+          let cpuScore = cpu === "useries" ? "6.5/10" : "9.0/10";
+          let gpuScore =
+            gpu === "integrated"
+              ? "2.5/10"
+              : gpu === "high"
+                ? "9.0/10"
+                : "7.0/10";
+          let batScore = cpu === "useries" ? "9.5/10 (High)" : "4.5/10 (Low)";
 
-        // Case B: Machine Learning / AI
-        else if (workload === "ml") {
-          if (gpuBrand === "amd") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-            courseBadge.innerText = "Critical Error: Wrong Brand";
-            courseText.innerHTML = `<strong>DO NOT BUY THIS.</strong> You selected an AMD GPU (${gpuName}), but Machine Learning libraries like TensorFlow and PyTorch rely heavily on <strong>NVIDIA CUDA cores</strong>. You will face massive compatibility issues. Switch to an NVIDIA RTX card immediately.`;
-          } else if (gpuTier === "low") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-yellow-900/50 text-yellow-400";
-            courseBadge.innerText = "Low VRAM Warning";
-            courseText.innerHTML = `The ${gpuName} has NVIDIA CUDA (which is good!), but low VRAM. If you are training larger AI models locally, you will run out of memory. Try to step up to an RTX 4060 or higher if budget allows.`;
-          } else {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-            courseBadge.innerText = "Great for AI/ML";
-            courseText.innerHTML = `Excellent choice. The NVIDIA ${gpuName} provides the CUDA acceleration you need for deep learning, and the CPU handles data preprocessing perfectly.`;
-          }
-        }
+          document.getElementById("scoreCpu").innerText = cpuScore;
+          document.getElementById("scoreGpu").innerText = gpuScore;
+          document.getElementById("scoreBattery").innerText = batScore;
 
-        // Case C: Heavy App Dev / Docker
-        else if (workload === "app") {
-          if (cpuTier === "low") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-yellow-900/50 text-yellow-400";
-            courseBadge.innerText = "CPU Might Struggle";
-            courseText.innerHTML = `Android Studio, Docker containers, and running Emulators are heavily CPU dependent. The ${cpuName} might stutter when compiling large projects. Consider upgrading to an i5/i7 or Ryzen 5/7. Make sure you get at least 16GB (preferably 32GB) of RAM!`;
-          } else {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-            courseBadge.innerText = "Solid Dev Setup";
-            courseText.innerHTML = `The ${cpuName} is powerful enough to handle Android Studio emulators and Docker containers simultaneously. Just ensure you pair this with 16GB+ RAM.`;
-          }
-        }
+          document.getElementById("p1Icon").innerText = "💻";
+          document.getElementById("p1Text").innerHTML =
+            cpu === "useries"
+              ? "<strong>CPU Performance:</strong> Power-efficient U-series chip. Great for class battery life, but slower during heavy code compilation."
+              : "<strong>CPU Performance:</strong> High-performance H/HX core architecture. Blasts through intensive compiler tasks and multithreaded jobs.";
 
-        // Case D: CAD / SolidWorks
-        else if (workload === "cad") {
-          if (cpuTier === "low" || gpuTier === "low") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-            courseBadge.innerText = "Underpowered for CAD";
-            courseText.innerHTML = `AutoCAD and SolidWorks require high single-core CPU speed and a decent GPU for viewport rendering. Your setup is a bit too weak for smooth 3D mechanical simulations.`;
-          } else {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-            courseBadge.innerText = "Great for Engineering CAD";
-            courseText.innerHTML = `This handles SolidWorks, AutoCAD, and ANSYS simulations easily. The ${cpuName} has great single-core performance for modeling, and the ${gpuName} handles the 3D viewport.`;
-          }
-        }
+          document.getElementById("p2Icon").innerText = "⚙️";
+          document.getElementById("p2Text").innerHTML =
+            gpu === "integrated"
+              ? "<strong>GPU Rendering:</strong> Integrated graphics. Safe for basic coding, but will fail heavy AI training, CAD viewports, or modern games."
+              : "<strong>GPU Rendering:</strong> Dedicated graphics chipset. Fully equipped for graphic-heavy engineering environments, CAD, and CUDA workflows.";
 
-        // Case E: Creative (Premiere, Blender)
-        else if (workload === "creative") {
-          if (cpuTier === "low" || gpuTier === "low") {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-red-900/50 text-red-400";
-            courseBadge.innerText = "Rendering Will Be Slow";
-            courseText.innerHTML = `3D rendering in Blender or exporting 4K video in Premiere Pro will take a very long time on this setup. Try to get at least a mid-tier CPU and an RTX 4060.`;
-          } else {
-            courseBadge.className =
-              "px-3 py-1 rounded-full text-xs font-semibold bg-green-900/50 text-green-400";
-            courseBadge.innerText = "Creator Ready";
-            courseText.innerHTML = `A beast for rendering. The ${gpuName} will blast through Blender renders, and the ${cpuName} will keep timeline scrubbing smooth in Premiere Pro.`;
-          }
+          document.getElementById("p3Icon").innerText = "🧠";
+          document.getElementById("p3Text").innerHTML =
+            ram === "8"
+              ? "<strong>RAM Multi-tasking:</strong> <span class='text-red-400 font-semibold'>⚠️ WARNING:</span> 8GB RAM is restrictive. Expect lag when multitasking with heavy IDEs or running local servers."
+              : ram === "32"
+                ? "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>🚀 Elite 32GB capacity.</span> Zero lag during heavy Docker, virtual machine, or multi-app execution."
+                : "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>✅ Solid 16GB standard configuration</span> for balanced engineering workloads.";
         }
       }
     </script>
