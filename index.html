@@ -78,12 +78,11 @@
                     <div class="flex flex-col gap-2">
                         <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Primary Software Need</label>
                         <select id="workload" class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
-                            <option value="basic">Basic Coding & Battery (U-Series + Integrated)</option>
-                            <option value="balanced">Balanced Dev, Gaming & Editing (H-Series + RTX 3050/4050) 🔥</option>
+                            <option value="basic">Basic Coding (C++, Python, Java, Web Dev)</option>
                             <option value="ml">AI & Machine Learning (TensorFlow, PyTorch, CUDA)</option>
-                            <option value="app">Heavy App Dev (Android Studio, Docker, VMs)</option>
+                            <option value="app">Heavy App Dev (Android Studio, Docker, iOS Dev)</option>
                             <option value="cad">CAD & Simulation (AutoCAD, SolidWorks, MATLAB)</option>
-                            <option value="apple">No Budget / Zero Waste: Elite Thin & Light (MacBook Air M2/M3)</option>
+                            <option value="creative">Creative (Blender, Premiere Pro, Unreal Engine)</option>
                         </select>
                     </div>
                 </div>
@@ -93,19 +92,20 @@
                     <div class="flex flex-col gap-2">
                         <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Processor (CPU)</label>
                         <select id="cpu" class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
-                            <option value="high">Intel Core i7-13620H / 14700HX (High Performance)</option>
-                            <option value="mid">Intel Core i5-13420H / 13500H (Mid Gaming/Dev)</option>
-                            <option value="useries">Intel Core i5-1335U / 1435U (Thin & Light / Battery)</option>
-                            <option value="ryzen7">AMD Ryzen 7 7840HS / 8845HS (High Performance)</option>
+                            <option value="apple">Apple Silicon (M4 / M5) - Max Efficiency</option>
+                            <option value="high">Intel Core i7-14700HX / Core Ultra 9 (High Power)</option>
+                            <option value="mid">Intel Core Ultra 5 / i5-13420H (Mid Gaming/Dev)</option>
+                            <option value="useries">Intel Core 5 120U / i5-1335U (Thin & Light)</option>
+                            <option value="ryzen7">AMD Ryzen 7 8845HS / 9000 Series (High Power)</option>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2">
                         <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Graphics (GPU)</label>
                         <select id="gpu" class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
-                            <option value="high">NVIDIA RTX 4060 / 4070 Laptop (Heavy Gaming / AI)</option>
-                            <option value="mid">NVIDIA RTX 4050 Laptop (Balanced Mid-Range)</option>
-                            <option value="entry">NVIDIA RTX 3050 6GB Laptop (Entry Gaming & Light Editing)</option>
-                            <option value="integrated">Intel Iris Xe / Integrated Graphics (No Dedicated GPU)</option>
+                            <option value="high">NVIDIA RTX 4070 / 4080 Laptop (Heavy Gaming / AI)</option>
+                            <option value="mid">NVIDIA RTX 4050 / 4060 Laptop (Balanced Mid-Range)</option>
+                            <option value="applegpu">Apple M-Series GPU (Excellent Media Engine, No CUDA)</option>
+                            <option value="integrated">Intel Arc / Radeon Integrated (No Dedicated GPU)</option>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2">
@@ -183,113 +183,101 @@
     <script>
         let currentMode = 'auto';
 
+        // ============================================================
+        // 💰 HOW TO UPDATE PRICES BEFORE YOUR PITCH:
+        // Just change the text inside the quotes for 'price: "..."'. 
+        // Example: If Mac Air M4 drops to 85k, change it to "₹85,000".
+        // ============================================================
+
         const laptopCatalog = {
             basic: [
                 {
-                    name: "ASUS Vivobook 16",
-                    specs: "Intel Core i5-1335U, 16GB RAM, 512GB SSD, Iris Xe Graphics",
-                    price: "₹45,990 - ₹49,990",
-                    rating: "4.2 ★ (2,400+ reviews)",
-                    amazonQuery: "ASUS+Vivobook+16+i5+1335U+16GB",
-                    flipkartQuery: "ASUS-Vivobook-16-Core-i5-13th-Gen"
+                    name: "Apple MacBook Air (M4 / M5 Chip)",
+                    specs: "16GB Unified Memory, 256GB SSD, macOS (Incredible Battery Life)",
+                    price: "₹99,900", 
+                    rating: "4.8 ★ (12,000+ reviews)",
+                    amazonQuery: "Apple+MacBook+Air+M4+16GB",
+                    flipkartQuery: "Apple-MacBook-Air-M4"
                 },
                 {
-                    name: "Acer Aspire Lite 15",
-                    specs: "AMD Ryzen 5 7520U, 16GB RAM, 512GB SSD, Radeon Graphics",
-                    price: "₹36,990 - ₹40,990",
-                    rating: "4.3 ★ (1,850+ reviews)",
-                    amazonQuery: "Acer+Aspire+Lite+Ryzen+5+16GB",
-                    flipkartQuery: "Acer-Aspire-Lite-Ryzen-5-16-GB"
-                }
-            ],
-            balanced: [
-                {
-                    name: "HP Victus Gaming 15",
-                    specs: "Intel Core i5-13420H, NVIDIA RTX 3050 (6GB VRAM), 16GB RAM, 512GB SSD",
-                    price: "₹58,990 - ₹64,990",
-                    rating: "4.3 ★ (3,200+ reviews)",
-                    amazonQuery: "HP+Victus+Gaming+i5+13th+Gen+RTX+3050",
-                    flipkartQuery: "HP-Victus-Core-i5-13th-Gen-RTX-3050"
-                },
-                {
-                    name: "Lenovo LOQ 15 (Mid Dedicated)",
-                    specs: "Intel Core i5-13450HX, NVIDIA RTX 4050 (6GB), 16GB RAM, 512GB SSD",
-                    price: "₹69,990 - ₹74,990",
-                    rating: "4.4 ★ (1,100+ reviews)",
-                    amazonQuery: "Lenovo+LOQ+i5+13th+Gen+RTX+4050",
-                    flipkartQuery: "Lenovo-LOQ-Core-i5-RTX-4050"
+                    name: "ASUS Vivobook / Acer Swift",
+                    specs: "Intel Core Ultra 5 / Ryzen 5 8520U, 16GB RAM, Integrated Graphics",
+                    price: "₹52,990", 
+                    rating: "4.3 ★ (3,100+ reviews)",
+                    amazonQuery: "ASUS+Vivobook+Core+Ultra+5+16GB",
+                    flipkartQuery: "Acer-Swift-Core-Ultra"
                 }
             ],
             ml: [
                 {
-                    name: "Lenovo LOQ 15 Gen 9",
-                    specs: "Intel Core i7-13620H / Ryzen 7 7435HS, RTX 4060 (8GB GDDR6), 16GB RAM",
-                    price: "₹82,990 - ₹89,990",
-                    rating: "4.4 ★ (950+ reviews)",
-                    amazonQuery: "Lenovo+LOQ+RTX+4060+i7",
-                    flipkartQuery: "Lenovo-LOQ-Core-i7-RTX-4060"
+                    name: "Lenovo LOQ / Legion 15",
+                    specs: "Intel Core i7-14700HX / Ryzen 7, NVIDIA RTX 4060 (8GB VRAM), 16GB RAM",
+                    price: "₹89,990", 
+                    rating: "4.5 ★ (1,850+ reviews)",
+                    amazonQuery: "Lenovo+LOQ+RTX+4060+i7+14th+Gen",
+                    flipkartQuery: "Lenovo-LOQ-RTX-4060"
                 },
                 {
-                    name: "Acer Nitro V 15",
-                    specs: "Intel Core i7-13620H, RTX 4060 (8GB), 16GB RAM",
-                    price: "₹78,990 - ₹84,990",
-                    rating: "4.3 ★ (1,120+ reviews)",
-                    amazonQuery: "Acer+Nitro+V+RTX+4060",
-                    flipkartQuery: "Acer-Nitro-V-Core-i7-RTX-4060"
+                    name: "ASUS TUF Gaming A15",
+                    specs: "AMD Ryzen 7 8845HS, NVIDIA RTX 4070 (Mandatory for heavy CUDA), 16GB RAM",
+                    price: "₹1,05,990", 
+                    rating: "4.4 ★ (2,100+ reviews)",
+                    amazonQuery: "ASUS+TUF+RTX+4070+Ryzen+7",
+                    flipkartQuery: "ASUS-TUF-RTX-4070"
                 }
             ],
             app: [
                 {
-                    name: "ASUS TUF Gaming F15",
-                    specs: "Intel Core i5-13500H, RTX 4050, 16GB RAM, Military-Grade Durability",
-                    price: "₹69,990 - ₹74,990",
-                    rating: "4.4 ★ (4,100+ reviews)",
-                    amazonQuery: "ASUS+TUF+Gaming+F15+i5+RTX+4050",
-                    flipkartQuery: "ASUS-TUF-Gaming-F15-RTX-4050"
+                    name: "Apple MacBook Pro 14 (M4 Pro)",
+                    specs: "M4 Pro Chip, 18GB Unified Memory, Best for iOS/Android Studio",
+                    price: "₹1,69,900", 
+                    rating: "4.9 ★ (800+ reviews)",
+                    amazonQuery: "Apple+MacBook+Pro+M4+Pro+18GB",
+                    flipkartQuery: "Apple-MacBook-Pro-M4"
                 },
                 {
-                    name: "Dell G15 5530",
-                    specs: "Intel Core i5-13450HX, RTX 3050 (6GB), 16GB RAM",
-                    price: "₹67,990 - ₹72,990",
-                    rating: "4.2 ★ (850+ reviews)",
-                    amazonQuery: "Dell+G15+5530+i5+HX",
-                    flipkartQuery: "Dell-G15-Core-i5-13th-Gen"
+                    name: "HP Victus / Omen 16",
+                    specs: "Intel Core Ultra 7 / i5-13420H, RTX 4050, 16GB RAM (Expandable to 32GB)",
+                    price: "₹74,990", 
+                    rating: "4.3 ★ (3,200+ reviews)",
+                    amazonQuery: "HP+Omen+Core+Ultra+7+RTX+4050",
+                    flipkartQuery: "HP-Victus-RTX-4050"
                 }
             ],
             cad: [
                 {
-                    name: "ASUS Creator Q OLED / Vivobook Pro",
-                    specs: "AMD Ryzen 7 7840HS, RTX 3050 / 4050, 16GB RAM, 100% sRGB",
-                    price: "₹74,990 - ₹82,990",
-                    rating: "4.4 ★ (720+ reviews)",
-                    amazonQuery: "ASUS+Creator+Ryzen+7+RTX",
-                    flipkartQuery: "ASUS-Creator-Laptop-Ryzen-7"
+                    name: "Dell G15 / Alienware m16",
+                    specs: "Intel Core i7-14700HX, RTX 4060, 16GB RAM, Thermal Cooling for SolidWorks",
+                    price: "₹92,990", 
+                    rating: "4.2 ★ (950+ reviews)",
+                    amazonQuery: "Dell+G15+i7+14th+Gen+RTX+4060",
+                    flipkartQuery: "Dell-G15-RTX-4060"
+                },
+                {
+                    name: "Lenovo IdeaPad Gaming / LOQ",
+                    specs: "AMD Ryzen 7 8845HS, RTX 4050 (6GB VRAM), 16GB RAM",
+                    price: "₹71,990", 
+                    rating: "4.4 ★ (2,800+ reviews)",
+                    amazonQuery: "Lenovo+IdeaPad+Gaming+RTX+4050",
+                    flipkartQuery: "Lenovo-IdeaPad-RTX-4050"
+                }
+            ],
+            creative: [
+                {
+                    name: "Apple MacBook Pro 16 (M4 Max / M5)",
+                    specs: "36GB Unified Memory, Liquid Retina XDR (Unmatched for Premiere/Blender)",
+                    price: "₹3,19,900", 
+                    rating: "4.9 ★ (400+ reviews)",
+                    amazonQuery: "Apple+MacBook+Pro+16+M4+Max",
+                    flipkartQuery: "Apple-MacBook-Pro-Max"
                 },
                 {
                     name: "Acer Predator Helios Neo 16",
-                    specs: "Intel Core i7-14700HX, RTX 4060, 16GB RAM",
-                    price: "₹1,09,990 - ₹1,24,990",
+                    specs: "Intel Core i9-14900HX, RTX 4070, 100% DCI-P3 Display, 32GB RAM",
+                    price: "₹1,44,990", 
                     rating: "4.5 ★ (600+ reviews)",
-                    amazonQuery: "Acer+Predator+Helios+Neo+16+i7",
-                    flipkartQuery: "Acer-Predator-Helios-Neo-16-i7"
-                }
-            ],
-            apple: [
-                {
-                    name: "Apple MacBook Air 15 (M3 Chip)",
-                    specs: "Apple M3 Chip (8-core CPU / 10-core GPU), 16GB Unified RAM, 512GB SSD, Fanless Silent Design",
-                    price: "₹1,34,900 - ₹1,44,900",
-                    rating: "4.8 ★ (1,500+ reviews)",
-                    amazonQuery: "Apple+MacBook+Air+M3+16GB",
-                    flipkartQuery: "Apple-MacBook-Air-M3-16-GB"
-                },
-                {
-                    name: "Apple MacBook Air 13 (M2 Chip)",
-                    specs: "Apple M2 Chip (8-core CPU / 8-core GPU), 16GB Unified RAM, 256GB/512GB SSD, 18hr Battery",
-                    price: "₹94,900 - ₹1,04,900",
-                    rating: "4.7 ★ (3,800+ reviews)",
-                    amazonQuery: "Apple+MacBook+Air+M2+16GB",
-                    flipkartQuery: "Apple-MacBook-Air-M2-16-GB"
+                    amazonQuery: "Acer+Predator+Helios+Neo+16+RTX+4070",
+                    flipkartQuery: "Acer-Predator-Helios-RTX-4070"
                 }
             ]
         };
@@ -365,61 +353,45 @@
                 renderLaptopCards(laptopCatalog[workload]);
 
                 if (workload === 'basic') {
-                    header.innerText = "✨ Ideal Configuration for Basic Coding & Battery";
+                    header.innerText = "✨ Ideal Configuration for Basic Coding";
                     document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i5-1335U or AMD Ryzen 5 (U-series for high battery backup during college lectures).";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Apple M4/M5 or Intel Core Ultra 5 (High efficiency & extreme battery life for lectures).";
                     document.getElementById('p2Icon').innerText = "⚙️";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> Intel Iris Xe / Radeon Integrated Graphics (No dedicated GPU required; saves budget).";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> Integrated Graphics (No dedicated GPU required; saves budget).";
                     document.getElementById('p3Icon').innerText = "🧠";
                     document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16 GB RAM (Essential for multi-tab research alongside VS Code).";
-                } else if (workload === 'balanced') {
-                    header.innerText = "🔥 Ideal Configuration for Balanced Coding, Gaming & Editing";
-                    document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i5-13420H / 13500H or Ryzen 5 (H-series power for quick code compilation).";
-                    document.getElementById('p2Icon').innerText = "⚡";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 3050 (6GB) or RTX 4050 (Ideal mid-tier dedicated GPU for casual gaming and video editing).";
-                    document.getElementById('p3Icon').innerText = "🧠";
-                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16 GB RAM (Balanced standard for seamless student multitasking).";
                 } else if (workload === 'ml') {
                     header.innerText = "🚀 Ideal Configuration for AI & Machine Learning";
                     document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i7-13620H or Ryzen 7 7840HS (High multi-core performance).";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i7-14700HX or Ryzen 7 8845HS (High wattage for dataset preprocessing).";
                     document.getElementById('p2Icon').innerText = "⚡";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4060 Laptop (Mandatory for PyTorch/TensorFlow CUDA core acceleration).";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4060 / 4070 Laptop (Mandatory for PyTorch/TensorFlow CUDA core acceleration).";
                     document.getElementById('p3Icon').innerText = "🧠";
-                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Crucial to prevent out-of-memory errors).";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Crucial to prevent out-of-memory errors when training locally).";
                 } else if (workload === 'app') {
                     header.innerText = "📱 Ideal Configuration for Heavy App Dev & Docker";
                     document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i5-13500H or Ryzen 7 (High multi-core thread count).";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Apple M4 Pro or Intel Core Ultra 7 (Fast compilation and emulation speeds).";
                     document.getElementById('p2Icon').innerText = "⚙️";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4050 / RTX 3050 Laptop (Balanced mid-range for rendering).";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> RTX 4050 or Apple M-Series GPU (Smooth UI rendering for mobile emulators).";
                     document.getElementById('p3Icon').innerText = "🧠";
-                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Required to run Android Studio emulators and Docker containers).";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Required to run Android Studio / Xcode and Docker containers).";
                 } else if (workload === 'cad') {
                     header.innerText = "📐 Ideal Configuration for Engineering CAD & Simulation";
                     document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i7-13620H or Ryzen 7 (High single-core clock speeds for SolidWorks).";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i7-14700HX (Windows-based OS is mandatory for SolidWorks and AutoCAD).";
                     document.getElementById('p2Icon').innerText = "⚙️";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4050 / RTX 3050 Laptop (Smooth 3D viewport rendering).";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4050 / RTX 4060 Laptop (Smooth 3D viewport rendering).";
                     document.getElementById('p3Icon').innerText = "🧠";
                     document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16 GB RAM (Standard recommendation for handling complex assembly models).";
-                } else if (workload === 'apple') {
-                    header.innerText = "🍏 No-Budget / Zero-Waste Elite Option (MacBook Air M2/M3)";
-                    document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU/SOC:</strong> Apple M2 / M3 Chip (Unmatched power-to-efficiency ratio for UNIX-based coding).";
-                    document.getElementById('p2Icon').innerText = "⚙️";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> Apple Integrated 10-Core GPU (Zero fan noise, perfectly adequate for frontend/backend dev & media playback without heavy gaming wattage waste).";
-                    document.getElementById('p3Icon').innerText = "🧠";
-                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB Unified Memory (Crucial: do not buy 8GB models; 16GB ensures longevity for multiple IDEs and browser tabs).";
                 } else {
                     header.innerText = "🎨 Ideal Configuration for Creative & Rendering";
                     document.getElementById('p1Icon').innerText = "💻";
-                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i7-14700HX or Ryzen 7 8845HS (Maximum computing horsepower).";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Apple M4 Max or Intel Core i9-14900HX (Maximum computing horsepower).";
                     document.getElementById('p2Icon').innerText = "⚡";
-                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4060 / 4070 Laptop (High VRAM for Blender and Premiere Pro timeline exports).";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> RTX 4070 or Apple 30-Core GPU (Hardware acceleration for Blender & Premiere Pro).";
                     document.getElementById('p3Icon').innerText = "🧠";
-                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Prevents system freezing during heavy media rendering exports).";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 32 GB RAM (Prevents system freezing during heavy media rendering exports).";
                 }
             } else {
                 scorecards.classList.remove('hidden');
@@ -430,23 +402,25 @@
                 const gpu = document.getElementById('gpu').value;
                 const ram = document.getElementById('ram').value;
 
-                let cpuScore = cpu === 'useries' ? '6.5/10' : '9.0/10';
-                let gpuScore = gpu === 'integrated' ? '2.5/10' : (gpu === 'high' ? '9.0/10' : '7.5/10');
-                let batScore = cpu === 'useries' ? '9.5/10 (High)' : '4.5/10 (Low)';
+                let cpuScore = cpu === 'apple' ? '9.5/10' : (cpu === 'useries' ? '6.5/10' : '9.0/10');
+                let gpuScore = gpu === 'integrated' ? '3.0/10' : (gpu === 'applegpu' ? '8.5/10' : (gpu === 'high' ? '9.5/10' : '7.5/10'));
+                let batScore = cpu === 'apple' ? '10/10 (Elite)' : (cpu === 'useries' ? '9.0/10 (High)' : '4.5/10 (Low)');
 
                 document.getElementById('scoreCpu').innerText = cpuScore;
                 document.getElementById('scoreGpu').innerText = gpuScore;
                 document.getElementById('scoreBattery').innerText = batScore;
 
                 document.getElementById('p1Icon').innerText = "💻";
-                document.getElementById('p1Text').innerHTML = cpu === 'useries' ? 
-                    "<strong>CPU Performance:</strong> Power-efficient U-series chip. Great for class battery life, but slower during heavy code compilation." : 
-                    "<strong>CPU Performance:</strong> High-performance H/HX core architecture. Blasts through intensive compiler tasks and multithreaded jobs.";
+                document.getElementById('p1Text').innerHTML = cpu === 'apple' ? 
+                    "<strong>CPU Performance:</strong> Apple Silicon (M4/M5) offers an unbeatable mix of top-tier compilation speed and extreme battery life." :
+                    (cpu === 'useries' ? "<strong>CPU Performance:</strong> Power-efficient U-series chip. Great for class battery life, but slower during heavy code compilation." : 
+                    "<strong>CPU Performance:</strong> High-performance H/HX core architecture. Blasts through intensive compiler tasks and multithreaded jobs.");
 
                 document.getElementById('p2Icon').innerText = "⚙️";
-                document.getElementById('p2Text').innerHTML = gpu === 'integrated' ? 
-                    "<strong>GPU Rendering:</strong> Integrated graphics. Safe for basic coding, but will fail heavy AI training, CAD viewports, or modern games." : 
-                    "<strong>GPU Rendering:</strong> Dedicated graphics chipset (RTX 3050/4050/4060). Fully equipped for gaming, video editing, and CUDA workflows.";
+                document.getElementById('p2Text').innerHTML = gpu === 'applegpu' ?
+                    "<strong>GPU Rendering:</strong> Apple M-Series GPU. Incredible for video editing and daily tasks, but lacks CUDA support for advanced Machine Learning." :
+                    (gpu === 'integrated' ? "<strong>GPU Rendering:</strong> Integrated graphics. Safe for basic coding, but will fail heavy AI training, CAD viewports, or gaming." : 
+                    "<strong>GPU Rendering:</strong> Dedicated graphics chipset. Fully equipped for graphic-heavy engineering environments, CAD, and CUDA workflows.");
 
                 document.getElementById('p3Icon').innerText = "🧠";
                 document.getElementById('p3Text').innerHTML = ram === '8' ? 
