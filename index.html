@@ -1,489 +1,425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bottleneck.sys | B.Tech Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Custom minimal scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #09090b;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #27272a;
-        border-radius: 4px;
-      }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
     </style>
-  </head>
-  <body
-    class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-indigo-500 selection:text-white"
-  >
+</head>
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
     <!-- Minimal Navbar -->
-    <nav
-      class="fixed w-full top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800"
-    >
-      <div
-        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <span class="text-xl font-semibold text-white tracking-tight"
-          >Bottleneck<span class="text-indigo-500">.sys</span>
-          <span
-            class="text-xs text-zinc-500 ml-2 border border-zinc-700 px-2 py-0.5 rounded-full"
-            >B.Tech Edition 🇮🇳</span
-          ></span
-        >
-        <a
-          href="#demo"
-          class="text-sm font-medium text-zinc-400 hover:text-white transition"
-          >Try Engine</a
-        >
-      </div>
+    <nav class="fixed w-full top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-semibold text-white tracking-tight">Bottleneck<span class="text-indigo-500">.sys</span> <span class="text-xs text-zinc-500 ml-2 border border-zinc-700 px-2 py-0.5 rounded-full">B.Tech Edition 🇮🇳</span></span>
+            <a href="#demo" class="text-sm font-medium text-zinc-400 hover:text-white transition">Try Engine</a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section
-      class="pt-40 pb-20 px-6 max-w-6xl mx-auto text-center flex flex-col items-center"
-    >
-      <div
-        class="inline-block px-4 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs text-indigo-400 font-medium mb-6 uppercase tracking-widest"
-      >
-        For Indian Engineering Students
-      </div>
-      <h1
-        class="text-5xl md:text-7xl font-semibold text-white tracking-tighter mb-6 leading-tight max-w-4xl"
-      >
-        Don't waste your parents' money.<br />
-        <span class="text-zinc-500">Buy the exact laptop you need.</span>
-      </h1>
-      <p class="text-lg md:text-xl text-zinc-400 max-w-3xl font-light mb-10">
-        Are you overspending on a heavy gaming rig when you only need C++? Or
-        buying an underpowered laptop for Machine Learning? Our engine evaluates
-        hardware against your actual B.Tech syllabus.
-      </p>
-      <a
-        href="#demo"
-        class="bg-white hover:bg-zinc-200 text-black px-8 py-3.5 rounded-lg font-medium transition shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-      >
-        Run Analysis
-      </a>
+    <section class="pt-40 pb-20 px-6 max-w-6xl mx-auto text-center flex flex-col items-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs text-indigo-400 font-medium mb-6 uppercase tracking-widest">
+            For Indian Engineering Students
+        </div>
+        <h1 class="text-5xl md:text-7xl font-semibold text-white tracking-tighter mb-6 leading-tight max-w-4xl">
+            Don't waste your parents' money.<br> <span class="text-zinc-500">Buy the exact laptop you need.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-zinc-400 max-w-3xl font-light mb-10">
+            Compare target hardware directly against your B.Tech branch syllabus and discover verified laptop recommendations with live market links.
+        </p>
+        <a href="#demo" class="bg-white hover:bg-zinc-200 text-black px-8 py-3.5 rounded-lg font-medium transition shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            Run Analysis
+        </a>
     </section>
 
-    <!-- Interactive MVP Demo Section -->
+    <!-- Interactive Engine Section -->
     <section id="demo" class="py-20 px-6 max-w-5xl mx-auto">
-      <div
-        class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-12 shadow-2xl"
-      >
-        <!-- Mode Selection Cards (Home) -->
-        <div id="homeMode" class="mb-8">
-          <h2 class="text-2xl text-white font-medium mb-2">
-            Student System Check
-          </h2>
-          <p class="text-zinc-400 text-sm mb-6">
-            Choose how you want to evaluate your system configuration.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div
-              onclick="switchMode('auto')"
-              class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition"
-            >
-              <h3 class="text-white font-medium mb-1">✨ Auto-Suggest Mode</h3>
-              <p class="text-zinc-400 text-xs">
-                Don't know specs? Select your branch & workload. We'll find the
-                exact laptop specs you need.
-              </p>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-12 shadow-2xl">
+            
+            <!-- Mode Selection Cards -->
+            <div id="homeMode" class="mb-8">
+                <h2 class="text-2xl text-white font-medium mb-2">Student System Check</h2>
+                <p class="text-zinc-400 text-sm mb-6">Choose how you want to evaluate your system configuration.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div onclick="switchMode('auto')" class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition">
+                        <h3 class="text-white font-medium mb-1">✨ Auto-Suggest & Top Models</h3>
+                        <p class="text-zinc-400 text-xs">Select your course requirements to get recommended specs and curated laptop models with buy links.</p>
+                    </div>
+                    <div onclick="switchMode('manual')" class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition">
+                        <h3 class="text-white font-medium mb-1">⚙️ Manual Spec Check</h3>
+                        <p class="text-zinc-400 text-xs">Test an existing hardware configuration for bottlenecks and view power/efficiency ratings.</p>
+                    </div>
+                </div>
             </div>
-            <div
-              onclick="switchMode('manual')"
-              class="bg-zinc-950 border border-zinc-800 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition"
-            >
-              <h3 class="text-white font-medium mb-1">⚙️ Manual Spec Check</h3>
-              <p class="text-zinc-400 text-xs">
-                Already have a laptop configuration in mind? Test its H/U
-                series, GPU, and RAM.
-              </p>
+
+            <!-- Workspace -->
+            <div id="workspace" class="hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="workspaceTitle" class="text-xl text-white font-medium">Evaluation Engine</h3>
+                    <button onclick="switchMode('home')" class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-3 py-1.5 rounded-lg transition">← Back to Modes</button>
+                </div>
+
+                <!-- Auto-Suggest Inputs -->
+                <div id="autoInputs" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">B.Tech Branch</label>
+                        <select id="branch" class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
+                            <option value="cse">Computer Science / IT (CSE, ISE, AIML)</option>
+                            <option value="ece">Electronics / Electrical (ECE, EEE)</option>
+                            <option value="mech">Mechanical / Civil / Aero</option>
+                            <option value="design">Design / Animation / Gaming</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Primary Software Need</label>
+                        <select id="workload" class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
+                            <option value="basic">Basic Coding (C++, Python, Java, Web Dev)</option>
+                            <option value="ml">AI & Machine Learning (TensorFlow, PyTorch, CUDA)</option>
+                            <option value="app">Heavy App Dev (Android Studio, Docker, VMs)</option>
+                            <option value="cad">CAD & Simulation (AutoCAD, SolidWorks, MATLAB)</option>
+                            <option value="creative">Creative (Blender, Premiere Pro, Unreal Engine)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Manual Inputs -->
+                <div id="manualInputs" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Processor (CPU)</label>
+                        <select id="cpu" class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
+                            <option value="high">Intel Core i7-13620H / 14700HX (High Performance)</option>
+                            <option value="mid">Intel Core i5-13420H / 12450H (Mid Gaming/Dev)</option>
+                            <option value="useries">Intel Core i5-1335U / 1235U (Thin & Light / Battery)</option>
+                            <option value="ryzen7">AMD Ryzen 7 7840HS / 8845HS (High Performance)</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Graphics (GPU)</label>
+                        <select id="gpu" class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
+                            <option value="high">NVIDIA RTX 4060 / 4070 Laptop (Heavy Gaming / AI)</option>
+                            <option value="mid">NVIDIA RTX 4050 Laptop (Balanced Mid-Range)</option>
+                            <option value="entry">NVIDIA RTX 3050 Laptop (Entry Gaming / Basic CUDA)</option>
+                            <option value="integrated">Intel Iris Xe / Integrated Graphics (No Dedicated GPU)</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">RAM Memory</label>
+                        <select id="ram" class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none">
+                            <option value="8">8 GB RAM (Basic Office & Light Coding)</option>
+                            <option value="16">16 GB RAM (Standard B.Tech / Recommended)</option>
+                            <option value="32">32 GB RAM (Heavy Dev, Docker & AI Multitasking)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="runAnalysis()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-4 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20">
+                    Analyze Configuration
+                </button>
+
+                <!-- Results Box -->
+                <div id="resultsBox" class="hidden border-t border-zinc-800 pt-6 mt-6 flex flex-col gap-4">
+                    <div class="bg-zinc-950 rounded-xl p-5 border border-zinc-800">
+                        <h4 id="resultHeader" class="text-green-400 font-bold text-base mb-4">Analysis Results</h4>
+                        
+                        <!-- Manual Scorecards -->
+                        <div id="scorecards" class="hidden grid grid-cols-3 gap-3 mb-4">
+                            <div class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center">
+                                <span class="text-[10px] text-zinc-400 block">CPU Power</span>
+                                <span id="scoreCpu" class="text-white font-bold text-xs">0/10</span>
+                            </div>
+                            <div class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center">
+                                <span class="text-[10px] text-zinc-400 block">GPU Power</span>
+                                <span id="scoreGpu" class="text-white font-bold text-xs">0/10</span>
+                            </div>
+                            <div class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center">
+                                <span class="text-[10px] text-zinc-400 block">Efficiency</span>
+                                <span id="scoreBattery" class="text-white font-bold text-xs">0/10</span>
+                            </div>
+                        </div>
+
+                        <!-- Pointwise Specs Breakdown -->
+                        <div class="flex flex-col gap-2 mb-6">
+                            <div class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50">
+                                <span id="p1Icon" class="text-xl">💻</span>
+                                <span id="p1Text" class="text-xs text-zinc-400 leading-relaxed"></span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50">
+                                <span id="p2Icon" class="text-xl">⚙️</span>
+                                <span id="p2Text" class="text-xs text-zinc-400 leading-relaxed"></span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50">
+                                <span id="p3Icon" class="text-xl">🧠</span>
+                                <span id="p3Text" class="text-xs text-zinc-400 leading-relaxed"></span>
+                            </div>
+                        </div>
+
+                        <!-- Curated Models Section (Auto Mode) -->
+                        <div id="recommendedModelsSection" class="border-t border-zinc-800/80 pt-4">
+                            <h5 class="text-white font-semibold text-sm mb-3">🔥 Verified Top Laptop Models for this Workload:</h5>
+                            <div id="modelsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Dynamic Laptop Cards Injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
         </div>
-
-        <!-- Interactive App Workspace (Hidden until mode is picked) -->
-        <div id="workspace" class="hidden">
-          <div class="flex justify-between items-center mb-6">
-            <h3 id="workspaceTitle" class="text-xl text-white font-medium">
-              Evaluation Engine
-            </h3>
-            <button
-              onclick="switchMode('home')"
-              class="text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-3 py-1.5 rounded-lg transition"
-            >
-              ← Back to Modes
-            </button>
-          </div>
-
-          <!-- Auto-Suggest Inputs -->
-          <div
-            id="autoInputs"
-            class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
-          >
-            <div class="flex flex-col gap-2">
-              <label
-                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-                >B.Tech Branch</label
-              >
-              <select
-                id="branch"
-                class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-              >
-                <option value="cse">
-                  Computer Science / IT (CSE, ISE, AIML)
-                </option>
-                <option value="ece">Electronics / Electrical (ECE, EEE)</option>
-                <option value="mech">Mechanical / Civil / Aero</option>
-                <option value="design">Design / Animation / Gaming</option>
-              </select>
-            </div>
-            <div class="flex flex-col gap-2">
-              <label
-                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-                >Primary Software Need</label
-              >
-              <select
-                id="workload"
-                class="bg-zinc-950 border border-zinc-800 text-indigo-300 rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-              >
-                <option value="basic">
-                  Basic Coding (C++, Python, Java, VS Code)
-                </option>
-                <option value="ml">
-                  AI & Machine Learning (TensorFlow, PyTorch, CUDA)
-                </option>
-                <option value="app">
-                  Heavy Dev (Android Studio, Docker, Virtual Machines)
-                </option>
-                <option value="cad">
-                  CAD & Simulation (AutoCAD, SolidWorks, MATLAB)
-                </option>
-                <option value="creative">
-                  Creative (Blender, Premiere Pro, Unreal Engine)
-                </option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Manual Inputs -->
-          <div
-            id="manualInputs"
-            class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
-          >
-            <div class="flex flex-col gap-2">
-              <label
-                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-                >Processor (CPU)</label
-              >
-              <select
-                id="cpu"
-                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-              >
-                <option value="high">
-                  Intel Core i7-13620H / 14700HX (High Performance)
-                </option>
-                <option value="mid">
-                  Intel Core i5-13420H / 12450H (Mid Gaming/Dev)
-                </option>
-                <option value="useries">
-                  Intel Core i5-1335U / 1235U (Thin & Light / Battery)
-                </option>
-                <option value="ryzen7">
-                  AMD Ryzen 7 7840HS / 8845HS (High Performance)
-                </option>
-              </select>
-            </div>
-            <div class="flex flex-col gap-2">
-              <label
-                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-                >Graphics (GPU)</label
-              >
-              <select
-                id="gpu"
-                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-              >
-                <option value="high">
-                  NVIDIA RTX 4060 / 4070 Laptop (Heavy Gaming / AI)
-                </option>
-                <option value="mid">
-                  NVIDIA RTX 4050 Laptop (Balanced Mid-Range)
-                </option>
-                <option value="entry">
-                  NVIDIA RTX 3050 Laptop (Entry Gaming / Basic CUDA)
-                </option>
-                <option value="integrated">
-                  Intel Iris Xe / Integrated Graphics (No Dedicated GPU)
-                </option>
-              </select>
-            </div>
-            <div class="flex flex-col gap-2">
-              <label
-                class="text-xs uppercase tracking-wider text-zinc-500 font-semibold"
-                >RAM Memory</label
-              >
-              <select
-                id="ram"
-                class="bg-zinc-950 border border-zinc-800 text-white rounded-lg p-3 focus:outline-none focus:border-indigo-500 transition appearance-none"
-              >
-                <option value="8">
-                  8 GB RAM (Basic Office & Light Coding)
-                </option>
-                <option value="16">
-                  16 GB RAM (Standard B.Tech / Recommended)
-                </option>
-                <option value="32">
-                  32 GB RAM (Heavy Dev, Docker & AI Multitasking)
-                </option>
-              </select>
-            </div>
-          </div>
-
-          <button
-            onclick="runAnalysis()"
-            class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-4 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20"
-          >
-            Analyze Configuration
-          </button>
-
-          <!-- Results Box -->
-          <div
-            id="resultsBox"
-            class="hidden border-t border-zinc-800 pt-6 mt-6 flex flex-col gap-4"
-          >
-            <div class="bg-zinc-950 rounded-xl p-5 border border-zinc-800">
-              <h4
-                id="resultHeader"
-                class="text-green-400 font-bold text-base mb-4"
-              >
-                Analysis Results
-              </h4>
-
-              <!-- Manual Scorecards (Visible only in manual mode) -->
-              <div id="scorecards" class="hidden grid grid-cols-3 gap-3 mb-4">
-                <div
-                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
-                >
-                  <span class="text-[10px] text-zinc-400 block">CPU Power</span>
-                  <span id="scoreCpu" class="text-white font-bold text-xs"
-                    >0/10</span
-                  >
-                </div>
-                <div
-                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
-                >
-                  <span class="text-[10px] text-zinc-400 block">GPU Power</span>
-                  <span id="scoreGpu" class="text-white font-bold text-xs"
-                    >0/10</span
-                  >
-                </div>
-                <div
-                  class="bg-zinc-900 border border-zinc-800 p-2.5 rounded-lg text-center"
-                >
-                  <span class="text-[10px] text-zinc-400 block"
-                    >Efficiency</span
-                  >
-                  <span id="scoreBattery" class="text-white font-bold text-xs"
-                    >0/10</span
-                  >
-                </div>
-              </div>
-
-              <!-- Pointwise Specs Breakdown -->
-              <div class="flex flex-col gap-2">
-                <div
-                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
-                >
-                  <span id="p1Icon" class="text-xl">💻</span>
-                  <span
-                    id="p1Text"
-                    class="text-xs text-zinc-400 leading-relaxed"
-                  ></span>
-                </div>
-                <div
-                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
-                >
-                  <span id="p2Icon" class="text-xl">⚙️</span>
-                  <span
-                    id="p2Text"
-                    class="text-xs text-zinc-400 leading-relaxed"
-                  ></span>
-                </div>
-                <div
-                  class="flex items-center gap-3 bg-zinc-900 p-3 rounded-lg border border-zinc-800/50"
-                >
-                  <span id="p3Icon" class="text-xl">🧠</span>
-                  <span
-                    id="p3Text"
-                    class="text-xs text-zinc-400 leading-relaxed"
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
-    <footer
-      class="py-12 border-t border-zinc-900 text-center flex flex-col items-center"
-    >
-      <span class="text-xl font-semibold text-white tracking-tight mb-2"
-        >Bottleneck<span class="text-indigo-500">.sys</span></span
-      >
-      <p class="text-xs text-zinc-600 uppercase tracking-widest">
-        Built for the Indian Engineering Community
-      </p>
+    <footer class="py-12 border-t border-zinc-900 text-center flex flex-col items-center">
+        <span class="text-xl font-semibold text-white tracking-tight mb-2">Bottleneck<span class="text-indigo-500">.sys</span></span>
+        <p class="text-xs text-zinc-600 uppercase tracking-widest">Built for the Indian Engineering Community</p>
     </footer>
 
     <!-- Interactive Script Logic -->
     <script>
-      let currentMode = "auto";
+        let currentMode = 'auto';
 
-      function switchMode(mode) {
-        currentMode = mode;
-        const home = document.getElementById("homeMode");
-        const workspace = document.getElementById("workspace");
-        const autoInputs = document.getElementById("autoInputs");
-        const manualInputs = document.getElementById("manualInputs");
-        const title = document.getElementById("workspaceTitle");
+        const laptopCatalog = {
+            basic: [
+                {
+                    name: "ASUS Vivobook 15 / 16",
+                    specs: "Intel Core i5-1235U / 1335U, 16GB RAM, 512GB SSD, Iris Xe",
+                    price: "₹42,990 - ₹48,990",
+                    rating: "4.2 ★ (2,400+ reviews)",
+                    amazonQuery: "ASUS+Vivobook+15+i5+16GB",
+                    flipkartQuery: "ASUS-Vivobook-15-Core-i5-16-GB"
+                },
+                {
+                    name: "Acer Aspire Lite 15",
+                    specs: "AMD Ryzen 5 5500U / 7520U, 16GB RAM, 512GB SSD, Radeon Graphics",
+                    price: "₹35,990 - ₹39,990",
+                    rating: "4.3 ★ (1,850+ reviews)",
+                    amazonQuery: "Acer+Aspire+Lite+Ryzen+5+16GB",
+                    flipkartQuery: "Acer-Aspire-Lite-Ryzen-5-16-GB"
+                }
+            ],
+            ml: [
+                {
+                    name: "Lenovo LOQ 15 Gen 9",
+                    specs: "Intel Core i7-13620H / Ryzen 7 7435HS, RTX 4060 (8GB GDDR6), 16GB RAM",
+                    price: "₹82,990 - ₹89,990",
+                    rating: "4.4 ★ (950+ reviews)",
+                    amazonQuery: "Lenovo+LOQ+RTX+4060+i7",
+                    flipkartQuery: "Lenovo-LOQ-Core-i7-RTX-4060"
+                },
+                {
+                    name: "Acer Nitro V 15",
+                    specs: "Intel Core i7-13620H, RTX 4060 (6GB/8GB), 16GB RAM (Expandable)",
+                    price: "₹78,990 - ₹84,990",
+                    rating: "4.3 ★ (1,120+ reviews)",
+                    amazonQuery: "Acer+Nitro+V+RTX+4060",
+                    flipkartQuery: "Acer-Nitro-V-Core-i7-RTX-4060"
+                }
+            ],
+            app: [
+                {
+                    name: "HP Victus Gaming 15",
+                    specs: "Intel Core i5-13420H / Ryzen 5 7535HS, RTX 3050 / 4050, 16GB RAM",
+                    price: "₹58,990 - ₹66,990",
+                    rating: "4.3 ★ (3,200+ reviews)",
+                    amazonQuery: "HP+Victus+Gaming+i5+13th+Gen",
+                    flipkartQuery: "HP-Victus-Core-i5-13th-Gen"
+                },
+                {
+                    name: "ASUS TUF Gaming F15",
+                    specs: "Intel Core i7-12700H, RTX 4050, 16GB RAM, Military-Grade Durability",
+                    price: "₹69,990 - ₹74,990",
+                    rating: "4.4 ★ (4,100+ reviews)",
+                    amazonQuery: "ASUS+TUF+Gaming+F15+i7+RTX+4050",
+                    flipkartQuery: "ASUS-TUF-Gaming-F15-RTX-4050"
+                }
+            ],
+            cad: [
+                {
+                    name: "Lenovo IdeaPad Gaming 3",
+                    specs: "AMD Ryzen 7 6800H / Intel i5-12450H, RTX 3050 (6GB VRAM), 16GB RAM",
+                    price: "₹54,990 - ₹61,990",
+                    rating: "4.3 ★ (2,800+ reviews)",
+                    amazonQuery: "Lenovo+IdeaPad+Gaming+3+RTX+3050",
+                    flipkartQuery: "Lenovo-IdeaPad-Gaming-3-RTX-3050"
+                },
+                {
+                    name: "Dell G15 5530",
+                    specs: "Intel Core i5-13450HX, RTX 3050, 16GB RAM, Thermal Cooling",
+                    price: "₹67,990 - ₹72,990",
+                    rating: "4.2 ★ (850+ reviews)",
+                    amazonQuery: "Dell+G15+5530+i5+HX",
+                    flipkartQuery: "Dell-G15-Core-i5-13th-Gen"
+                }
+            ],
+            creative: [
+                {
+                    name: "Acer Predator Helios Neo 16",
+                    specs: "Intel Core i7-14700HX, RTX 4060 / 4070, 100% sRGB Display, 16GB RAM",
+                    price: "₹1,09,990 - ₹1,24,990",
+                    rating: "4.5 ★ (600+ reviews)",
+                    amazonQuery: "Acer+Predator+Helios+Neo+16+i7",
+                    flipkartQuery: "Acer-Predator-Helios-Neo-16-i7"
+                },
+                {
+                    name: "ASUS ROG Strix G16",
+                    specs: "Intel Core i7-13650HX, RTX 4060, ROG Nebula Display, 16GB RAM",
+                    price: "₹1,14,990 - ₹1,29,990",
+                    rating: "4.6 ★ (450+ reviews)",
+                    amazonQuery: "ASUS+ROG+Strix+G16+RTX+4060",
+                    flipkartQuery: "ASUS-ROG-Strix-G16-RTX-4060"
+                }
+            ]
+        };
 
-        home.classList.add("hidden");
-        workspace.classList.remove("hidden");
-        document.getElementById("resultsBox").classList.add("hidden");
+        function switchMode(mode) {
+            currentMode = mode;
+            const home = document.getElementById('homeMode');
+            const workspace = document.getElementById('workspace');
+            const autoInputs = document.getElementById('autoInputs');
+            const manualInputs = document.getElementById('manualInputs');
+            const title = document.getElementById('workspaceTitle');
 
-        if (mode === "auto") {
-          autoInputs.classList.remove("hidden");
-          manualInputs.classList.add("hidden");
-          title.innerText = "🎯 Smart Course Advisor (Auto-Suggest)";
-        } else {
-          autoInputs.classList.add("hidden");
-          manualInputs.classList.remove("hidden");
-          title.innerText = "⚙️ Manual Laptop Hardware Check";
+            home.classList.add('hidden');
+            workspace.classList.remove('hidden');
+            document.getElementById('resultsBox').classList.add('hidden');
+
+            if (mode === 'auto') {
+                autoInputs.classList.remove('hidden');
+                manualInputs.classList.add('hidden');
+                title.innerText = "🎯 Smart Course Advisor (Auto-Suggest)";
+            } else {
+                autoInputs.classList.add('hidden');
+                manualInputs.classList.remove('hidden');
+                title.innerText = "⚙️ Manual Laptop Hardware Check";
+            }
         }
-      }
 
-      function runAnalysis() {
-        const box = document.getElementById("resultsBox");
-        const scorecards = document.getElementById("scorecards");
-        const header = document.getElementById("resultHeader");
+        function renderLaptopCards(models) {
+            const container = document.getElementById('modelsContainer');
+            container.innerHTML = '';
 
-        box.classList.remove("hidden");
+            models.forEach(item => {
+                const amazonUrl = `https://www.amazon.in/s?k=${item.amazonQuery}`;
+                const flipkartUrl = `https://www.flipkart.com/search?q=${item.flipkartQuery}`;
 
-        if (currentMode === "auto") {
-          scorecards.classList.add("hidden");
-          const workload = document.getElementById("workload").value;
-
-          if (workload === "basic") {
-            header.innerText = "✨ Ideal Configuration for Basic Coding";
-            document.getElementById("p1Icon").innerText = "💻";
-            document.getElementById("p1Text").innerHTML =
-              "<strong>Target CPU:</strong> Intel i5-1335U, i5-1235U, or AMD Ryzen 5 7520U (U-series for high battery backup during long college lectures).";
-            document.getElementById("p2Icon").innerText = "⚙️";
-            document.getElementById("p2Text").innerHTML =
-              "<strong>Target GPU:</strong> Intel Iris Xe / Radeon Integrated Graphics (No dedicated GPU required; saves money).";
-            document.getElementById("p3Icon").innerText = "🧠";
-            document.getElementById("p3Text").innerHTML =
-              "<strong>Target RAM:</strong> 16 GB RAM (Essential for smooth multi-tab research alongside VS Code).";
-          } else if (workload === "ml") {
-            header.innerText =
-              "🚀 Ideal Configuration for AI & Machine Learning";
-            document.getElementById("p1Icon").innerText = "💻";
-            document.getElementById("p1Text").innerHTML =
-              "<strong>Target CPU:</strong> Intel i7-13620H, i7-14700HX, or Ryzen 7 7840HS (H-series power for dataset processing).";
-            document.getElementById("p2Icon").innerText = "⚡";
-            document.getElementById("p2Text").innerHTML =
-              "<strong>Target GPU:</strong> NVIDIA RTX 4060 or RTX 4070 Laptop (Mandatory for PyTorch/TensorFlow CUDA core acceleration).";
-            document.getElementById("p3Icon").innerText = "🧠";
-            document.getElementById("p3Text").innerHTML =
-              "<strong>Target RAM:</strong> 32 GB RAM (Crucial to prevent out-of-memory errors when training models locally).";
-          } else if (workload === "app") {
-            header.innerText =
-              "📱 Ideal Configuration for Heavy App Dev & Docker";
-            document.getElementById("p1Icon").innerText = "💻";
-            document.getElementById("p1Text").innerHTML =
-              "<strong>Target CPU:</strong> AMD Ryzen 7 7840HS or Intel i5-13420H (High multi-core thread count).";
-            document.getElementById("p2Icon").innerText = "⚙️";
-            document.getElementById("p2Text").innerHTML =
-              "<strong>Target GPU:</strong> NVIDIA RTX 4050 Laptop (Balanced mid-range for rendering).";
-            document.getElementById("p3Icon").innerText = "🧠";
-            document.getElementById("p3Text").innerHTML =
-              "<strong>Target RAM:</strong> 32 GB RAM (Required to run Android Studio emulators and Docker containers concurrently).";
-          } else if (workload === "cad") {
-            header.innerText =
-              "📐 Ideal Configuration for Engineering CAD & Simulation";
-            document.getElementById("p1Icon").innerText = "💻";
-            document.getElementById("p1Text").innerHTML =
-              "<strong>Target CPU:</strong> Intel Core i7-13620H or Ryzen 5 7535HS (High single-core clock speeds for SolidWorks).";
-            document.getElementById("p2Icon").innerText = "⚙️";
-            document.getElementById("p2Text").innerHTML =
-              "<strong>Target GPU:</strong> NVIDIA RTX 4050 or RTX 3050 Laptop (Smooth 3D viewport rendering).";
-            document.getElementById("p3Icon").innerText = "🧠";
-            document.getElementById("p3Text").innerHTML =
-              "<strong>Target RAM:</strong> 16 GB RAM (Standard recommendation for handling complex assembly models).";
-          } else {
-            header.innerText =
-              "🎨 Ideal Configuration for Creative & Rendering";
-            document.getElementById("p1Icon").innerText = "💻";
-            document.getElementById("p1Text").innerHTML =
-              "<strong>Target CPU:</strong> Intel Core i7-14700HX or Ryzen 7 8845HS (Maximum computing horsepower).";
-            document.getElementById("p2Icon").innerText = "⚡";
-            document.getElementById("p2Text").innerHTML =
-              "<strong>Target GPU:</strong> NVIDIA RTX 4060 Laptop (High VRAM for Blender and Premiere Pro timeline exports).";
-            document.getElementById("p3Icon").innerText = "🧠";
-            document.getElementById("p3Text").innerHTML =
-              "<strong>Target RAM:</strong> 32 GB RAM (Prevents system freezing during heavy media rendering exports).";
-          }
-        } else {
-          scorecards.classList.remove("hidden");
-          header.innerText = "📊 Manual Build Performance Analysis";
-
-          const cpu = document.getElementById("cpu").value;
-          const gpu = document.getElementById("gpu").value;
-          const ram = document.getElementById("ram").value;
-
-          let cpuScore = cpu === "useries" ? "6.5/10" : "9.0/10";
-          let gpuScore =
-            gpu === "integrated"
-              ? "2.5/10"
-              : gpu === "high"
-                ? "9.0/10"
-                : "7.0/10";
-          let batScore = cpu === "useries" ? "9.5/10 (High)" : "4.5/10 (Low)";
-
-          document.getElementById("scoreCpu").innerText = cpuScore;
-          document.getElementById("scoreGpu").innerText = gpuScore;
-          document.getElementById("scoreBattery").innerText = batScore;
-
-          document.getElementById("p1Icon").innerText = "💻";
-          document.getElementById("p1Text").innerHTML =
-            cpu === "useries"
-              ? "<strong>CPU Performance:</strong> Power-efficient U-series chip. Great for class battery life, but slower during heavy code compilation."
-              : "<strong>CPU Performance:</strong> High-performance H/HX core architecture. Blasts through intensive compiler tasks and multithreaded jobs.";
-
-          document.getElementById("p2Icon").innerText = "⚙️";
-          document.getElementById("p2Text").innerHTML =
-            gpu === "integrated"
-              ? "<strong>GPU Rendering:</strong> Integrated graphics. Safe for basic coding, but will fail heavy AI training, CAD viewports, or modern games."
-              : "<strong>GPU Rendering:</strong> Dedicated graphics chipset. Fully equipped for graphic-heavy engineering environments, CAD, and CUDA workflows.";
-
-          document.getElementById("p3Icon").innerText = "🧠";
-          document.getElementById("p3Text").innerHTML =
-            ram === "8"
-              ? "<strong>RAM Multi-tasking:</strong> <span class='text-red-400 font-semibold'>⚠️ WARNING:</span> 8GB RAM is restrictive. Expect lag when multitasking with heavy IDEs or running local servers."
-              : ram === "32"
-                ? "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>🚀 Elite 32GB capacity.</span> Zero lag during heavy Docker, virtual machine, or multi-app execution."
-                : "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>✅ Solid 16GB standard configuration</span> for balanced engineering workloads.";
+                const cardHtml = `
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h6 class="text-white font-semibold text-sm">${item.name}</h6>
+                                <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-medium">${item.rating}</span>
+                            </div>
+                            <p class="text-[11px] text-zinc-400 mb-2 leading-relaxed">${item.specs}</p>
+                            <p class="text-xs text-indigo-400 font-bold mb-3">Est. Price: ${item.price}</p>
+                        </div>
+                        <div class="flex gap-2 pt-2 border-t border-zinc-800/60">
+                            <a href="${amazonUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] py-1.5 rounded transition">
+                                🛒 Amazon
+                            </a>
+                            <a href="${flipkartUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 text-[11px] py-1.5 rounded transition border border-blue-500/30">
+                                ⚡ Flipkart
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
         }
-      }
+
+        function runAnalysis() {
+            const box = document.getElementById('resultsBox');
+            const scorecards = document.getElementById('scorecards');
+            const header = document.getElementById('resultHeader');
+            const modelsSection = document.getElementById('recommendedModelsSection');
+            
+            box.classList.remove('hidden');
+
+            if (currentMode === 'auto') {
+                scorecards.classList.add('hidden');
+                modelsSection.classList.remove('hidden');
+                const workload = document.getElementById('workload').value;
+
+                renderLaptopCards(laptopCatalog[workload]);
+
+                if (workload === 'basic') {
+                    header.innerText = "✨ Ideal Configuration for Basic Coding";
+                    document.getElementById('p1Icon').innerText = "💻";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i5-1335U, i5-1235U, or AMD Ryzen 5 7520U (U-series for high battery backup during college lectures).";
+                    document.getElementById('p2Icon').innerText = "⚙️";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> Intel Iris Xe / Radeon Integrated Graphics (No dedicated GPU required; saves budget).";
+                    document.getElementById('p3Icon').innerText = "🧠";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16 GB RAM (Essential for multi-tab research alongside VS Code).";
+                } else if (workload === 'ml') {
+                    header.innerText = "🚀 Ideal Configuration for AI & Machine Learning";
+                    document.getElementById('p1Icon').innerText = "💻";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel i7-13620H, i7-14700HX, or Ryzen 7 7840HS (H-series power for dataset preprocessing).";
+                    document.getElementById('p2Icon').innerText = "⚡";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4060 Laptop (Mandatory for PyTorch/TensorFlow CUDA core acceleration).";
+                    document.getElementById('p3Icon').innerText = "🧠";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Crucial to prevent out-of-memory errors when training models locally).";
+                } else if (workload === 'app') {
+                    header.innerText = "📱 Ideal Configuration for Heavy App Dev & Docker";
+                    document.getElementById('p1Icon').innerText = "💻";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> AMD Ryzen 7 7840HS or Intel i5-13420H (High multi-core thread count).";
+                    document.getElementById('p2Icon').innerText = "⚙️";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 3050 / RTX 4050 Laptop (Balanced mid-range for rendering).";
+                    document.getElementById('p3Icon').innerText = "🧠";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Required to run Android Studio emulators and Docker containers).";
+                } else if (workload === 'cad') {
+                    header.innerText = "📐 Ideal Configuration for Engineering CAD & Simulation";
+                    document.getElementById('p1Icon').innerText = "💻";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i7-13620H or Ryzen 7 6800H (High single-core clock speeds for SolidWorks).";
+                    document.getElementById('p2Icon').innerText = "⚙️";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 3050 / RTX 4050 Laptop (Smooth 3D viewport rendering).";
+                    document.getElementById('p3Icon').innerText = "🧠";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16 GB RAM (Standard recommendation for handling complex assembly models).";
+                } else {
+                    header.innerText = "🎨 Ideal Configuration for Creative & Rendering";
+                    document.getElementById('p1Icon').innerText = "💻";
+                    document.getElementById('p1Text').innerHTML = "<strong>Target CPU:</strong> Intel Core i7-14700HX or Ryzen 7 8845HS (Maximum computing horsepower).";
+                    document.getElementById('p2Icon').innerText = "⚡";
+                    document.getElementById('p2Text').innerHTML = "<strong>Target GPU:</strong> NVIDIA RTX 4060 / 4070 Laptop (High VRAM for Blender and Premiere Pro timeline exports).";
+                    document.getElementById('p3Icon').innerText = "🧠";
+                    document.getElementById('p3Text').innerHTML = "<strong>Target RAM:</strong> 16GB - 32GB RAM (Prevents system freezing during heavy media rendering exports).";
+                }
+            } else {
+                scorecards.classList.remove('hidden');
+                modelsSection.classList.add('hidden');
+                header.innerText = "📊 Manual Build Performance Analysis";
+
+                const cpu = document.getElementById('cpu').value;
+                const gpu = document.getElementById('gpu').value;
+                const ram = document.getElementById('ram').value;
+
+                let cpuScore = cpu === 'useries' ? '6.5/10' : '9.0/10';
+                let gpuScore = gpu === 'integrated' ? '2.5/10' : (gpu === 'high' ? '9.0/10' : '7.0/10');
+                let batScore = cpu === 'useries' ? '9.5/10 (High)' : '4.5/10 (Low)';
+
+                document.getElementById('scoreCpu').innerText = cpuScore;
+                document.getElementById('scoreGpu').innerText = gpuScore;
+                document.getElementById('scoreBattery').innerText = batScore;
+
+                document.getElementById('p1Icon').innerText = "💻";
+                document.getElementById('p1Text').innerHTML = cpu === 'useries' ? 
+                    "<strong>CPU Performance:</strong> Power-efficient U-series chip. Great for class battery life, but slower during heavy code compilation." : 
+                    "<strong>CPU Performance:</strong> High-performance H/HX core architecture. Blasts through intensive compiler tasks and multithreaded jobs.";
+
+                document.getElementById('p2Icon').innerText = "⚙️";
+                document.getElementById('p2Text').innerHTML = gpu === 'integrated' ? 
+                    "<strong>GPU Rendering:</strong> Integrated graphics. Safe for basic coding, but will fail heavy AI training, CAD viewports, or modern games." : 
+                    "<strong>GPU Rendering:</strong> Dedicated graphics chipset. Fully equipped for graphic-heavy engineering environments, CAD, and CUDA workflows.";
+
+                document.getElementById('p3Icon').innerText = "🧠";
+                document.getElementById('p3Text').innerHTML = ram === '8' ? 
+                    "<strong>RAM Multi-tasking:</strong> <span class='text-red-400 font-semibold'>⚠️ WARNING:</span> 8GB RAM is restrictive. Expect lag when multitasking with heavy IDEs or running local servers." : 
+                    (ram === '32' ? "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>🚀 Elite 32GB capacity.</span> Zero lag during heavy Docker, virtual machine, or multi-app execution." : 
+                    "<strong>RAM Multi-tasking:</strong> <span class='text-green-400 font-semibold'>✅ Solid 16GB standard configuration</span> for balanced engineering workloads.");
+            }
+        }
     </script>
-  </body>
+</body>
 </html>
